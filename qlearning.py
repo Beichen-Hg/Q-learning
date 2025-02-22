@@ -6,8 +6,8 @@ class QLearningAgent:
     def __init__(self, state_space, action_space=4):
         self.q_table = defaultdict(lambda: np.zeros(action_space))
         self.alpha = 0.1    # 学习率
-        self.gamma = 0.95   # 折扣因子
-        self.epsilon = 0.7  # 初始探索率
+        self.gamma = 0.99   # 折扣因子
+        self.epsilon = 1.0  # 初始探索率
         self.min_epsilon = 0.01
         self.decay_rate = 0.995
         
