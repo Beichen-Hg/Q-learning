@@ -5,10 +5,10 @@ from qlearning import QLearningAgent
 import os
 
 # 训练参数
-EPISODES = 1000
-SHOW_EVERY = 50    # 每N轮显示一次
-SAVE_EVERY = 100   # 每N轮保存一次
-STATS_EVERY = 20   # 统计间隔
+EPISODES = 2000
+SHOW_EVERY = 100    # 每N轮显示一次
+SAVE_EVERY = 200   # 每N轮保存一次
+STATS_EVERY = 20  # 统计间隔
 
 def train():
     print("Starting training...")
