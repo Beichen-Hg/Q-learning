@@ -1,0 +1,9 @@
+{
+    "experiment_name": "baseline",
+    "episodes": 2000,
+    "alpha": 0.1,
+    "gamma": 0.99,
+    "epsilon": 1.0,
+    "min_epsilon": 0.01,
+    "decay_rate": 0.995
+}

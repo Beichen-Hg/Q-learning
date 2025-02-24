@@ -3,20 +3,27 @@ import json
 from collections import defaultdict
 
 class QLearningAgent:
-    def __init__(self, state_space, action_space=4):
+    def __init__(self, state_space, action_space, alpha=0.1, gamma=0.99, epsilon=1.0, min_epsilon=0.01, decay_rate=0.995):
         """
-        Initialize the Q-learning agent.
+        Initialize Q-learning agent
         
         Parameters:
-        state_space (int): The size of the state space.
-        action_space (int): The number of possible actions. Default is 4.
+        state_space (int): Size of state space
+        action_space (int): Number of possible actions
+        alpha (float): Learning rate
+        gamma (float): Discount factor
+        epsilon (float): Initial exploration rate
+        min_epsilon (float): Minimum exploration rate
+        decay_rate (float): Exploration rate decay
         """
+        self.state_space = state_space
+        self.action_space = action_space
+        self.alpha = alpha  # Learning rate
+        self.gamma = gamma  # Discount factor
+        self.epsilon = epsilon  # Exploration rate
+        self.min_epsilon = min_epsilon  # Minimum exploration
+        self.decay_rate = decay_rate  # Decay rate
         self.q_table = defaultdict(lambda: np.zeros(action_space))  # Initialize Q-table with zeros
-        self.alpha = 0.1    # Learning rate
-        self.gamma = 0.99   # Discount factor
-        self.epsilon = 1.0  # Initial exploration rate
-        self.min_epsilon = 0.01  # Minimum exploration rate
-        self.decay_rate = 0.995  # Decay rate for exploration rate
         
     def choose_action(self, state):
         """
@@ -29,7 +36,7 @@ class QLearningAgent:
         int: The action to be taken.
         """
         if np.random.random() < self.epsilon:
-            return np.random.choice(4)  # Random exploration
+            return np.random.choice(self.action_space)  # Random exploration
         else:
             return np.argmax(self.q_table[state])  # Exploitation of learned values
             
@@ -75,6 +82,6 @@ class QLearningAgent:
         """
         with open(filename, 'r') as f:
             data = json.load(f)  # Load Q-table from file
-        self.q_table = defaultdict(lambda: np.zeros(4))  # Initialize Q-table
+        self.q_table = defaultdict(lambda: np.zeros(self.action_space))  # Initialize Q-table
         for k, v in data.items():
             self.q_table[eval(k)] = np.array(v)  # Populate Q-table with loaded data

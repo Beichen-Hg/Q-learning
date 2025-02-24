@@ -1,0 +1,9 @@
+{
+    "experiment_name": "fast_stable",
+    "episodes": 2000,
+    "alpha": 0.15,
+    "gamma": 0.99,
+    "epsilon": 1.0,
+    "min_epsilon": 0.02,
+    "decay_rate": 0.992
+}

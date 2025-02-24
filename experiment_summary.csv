@@ -1,0 +1,6 @@
+,Experiment,Avg Score,Max Score,Final Win Rate,Training Time,Config
+0,baseline,15.48,38,1,282.5919551849365,"{'experiment_name': 'baseline', 'episodes': 2000, 'alpha': 0.1, 'gamma': 0.99, 'epsilon': 1.0, 'min_epsilon': 0.01, 'decay_rate': 0.995}"
+1,fast_learning,14.56,39,1,301.9887783527374,"{'experiment_name': 'fast_learning', 'episodes': 2000, 'alpha': 0.2, 'gamma': 0.99, 'epsilon': 1.0, 'min_epsilon': 0.01, 'decay_rate': 0.99}"
+2,slow_exploration,7.27,29,1,151.62749218940735,"{'experiment_name': 'slow_exploration', 'episodes': 2000, 'alpha': 0.1, 'gamma': 0.99, 'epsilon': 1.0, 'min_epsilon': 0.05, 'decay_rate': 0.998}"
+3,fast_stable,14.91,42,1,239.24965500831604,"{'experiment_name': 'fast_stable', 'episodes': 2000, 'alpha': 0.15, 'gamma': 0.99, 'epsilon': 1.0, 'min_epsilon': 0.02, 'decay_rate': 0.992}"
+4,fast_aggressive,14.76,38,1,307.5798420906067,"{'experiment_name': 'fast_aggressive', 'episodes': 2000, 'alpha': 0.25, 'gamma': 0.99, 'epsilon': 1.0, 'min_epsilon': 0.01, 'decay_rate': 0.988}"

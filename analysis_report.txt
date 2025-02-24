@@ -1,0 +1,76 @@
+
+Experiment Analysis Report
+============
+
+1. Learning Performance Comparison
+                  Average Score  Max Score  Final Score  Average Steps  Convergence Episode  Learning Stability
+baseline                  15.48       38.0        21.50         235.68                 57.0           10.222257
+fast_aggressive           14.76       38.0        15.90         306.71                 57.0            9.033182
+fast_learning             14.56       39.0        18.45         232.14                 57.0            8.758626
+fast_stable               14.91       42.0        17.60         217.76                 57.0            8.617688
+slow_exploration           7.27       29.0        13.00         128.79                 57.0            6.309933
+
+2. Exploration-Exploitation Phase Analysis
+                  Exploration Episodes  Transition Episodes  Exploitation Start Episode  Total Episodes
+baseline                           138                  321                         459             100
+fast_aggressive                     57                  133                         190             100
+fast_learning                       68                  161                         229             100
+fast_stable                         86                  200                         286             100
+slow_exploration                   346                  804                        1150             100
+
+3. Learning Efficiency Analysis
+                  Exploration Phase Avg  Exploitation Phase Avg  Exploration Length  Score Improvement
+baseline                       0.666667               18.910256                 6.0        2736.538462
+fast_aggressive                0.500000               15.846154                 2.0        3069.230769
+fast_learning                  0.666667               15.921348                 3.0        2288.202247
+fast_stable                    0.500000               16.802326                 4.0        3260.465116
+slow_exploration               0.764706               11.953488                17.0        1463.148479
+
+4. Configuration Analysis
+baseline:
+- Highest final score (21.50)
+- Highest average score (15.48)
+- Higher learning variance (std: 10.22)
+
+fast_aggressive:
+- Quickest to exploitation phase (190 episodes)
+- Highest score improvement (3069.23%)
+- Lower final score (15.90)
+
+slow_exploration:
+- Most stable learning process (std: 6.31)
+- Longest exploration phase (346 episodes)
+- Lowest average score (7.27)
+
+5. Resource Utilization Analysis
+                 Q-table Size Training Time Memory Usage
+baseline                 1668             0      ~13.0MB
+fast_aggressive          1762             0      ~13.8MB
+fast_learning            1534             0      ~12.0MB
+fast_stable              1597             0      ~12.5MB
+slow_exploration         1446             0      ~11.3MB
+
+6. Configuration Recommendations
+Scenario recommendations:
+1. For best final performance: baseline
+   - Pros: Highest final score, good average performance
+   - Cons: Higher learning variance, requires longer training time
+
+2. For quick training: fast_aggressive
+   - Pros: Fastest convergence, significant early improvements
+   - Cons: Lower final performance, may sacrifice exploration
+
+3. For stable learning: slow_exploration
+   - Pros: Most stable learning process, suitable for long-term training
+   - Cons: Slow convergence, lower average performance
+
+7. Performance Trade-off Analysis
+1. Learning Speed vs Stability:
+   - fast_aggressive shows fastest learning but sacrifices final performance
+   - slow_exploration provides most stable learning but requires longer training
+   - baseline achieves good balance between speed and stability
+
+2. Exploration vs Exploitation:
+   - Shorter exploration phase (fast_aggressive) leads to quick but potentially incomplete learning
+   - Longer exploration phase (slow_exploration) provides more thorough but slower learning
+   - Medium exploration time (baseline) balances learning completeness and efficiency
