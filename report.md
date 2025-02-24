@@ -144,7 +144,7 @@ The Snake game environment is implemented with the following key components:
    - Movement: Discrete (Up, Down, Left, Right)
 
 2. State Management
-
+```
 def reset(self):
     """Reset game to initial state"""
     self.head = Point(self.width/2, self.height/2)
@@ -156,7 +156,7 @@ def reset(self):
     self.direction = Direction.RIGHT
     self.score = 0
     self._place_food()
-
+```
 ### 2.2 State Space Design
 The state space consists of 16 binary values:
 
