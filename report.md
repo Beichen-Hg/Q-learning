@@ -377,7 +377,8 @@ Performance Results
 ### 4.3 Visualization Results
 
 #### 4.3.1 Training Curves
-![Training Results](./training_curves.png)
+
+<img src="./training_curves.png" alt="Training Results" width="800"/>
 
 The training curves show three key metrics over 2000 episodes:
 
